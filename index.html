@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎬 Кино-Рулетка</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎬 Кино-Рулетка</h1>
+    <p class="subtitle">Не знаешь, что посмотреть? Доверься случаю!</p>
+    
+    <div class="controls">
+      <select id="genreSelect" class="genre-select">
+        <option value="">Любой жанр</option>
+        <option value="action">Боевик</option>
+        <option value="comedy">Комедия</option>
+        <option value="horror">Ужасы</option>
+        <option value="sci-fi">Фантастика</option>
+        <option value="drama">Драма</option>
+        <option value="thriller">Триллер</option>
+      </select>
+      <button id="spinBtn" class="spin-btn">Крутить рулетку</button>
+    </div>
+
+    <!-- Основная карточка фильма -->
+    <div id="movieCard" class="movie-card hidden">
+      <div class="poster-container">
+        <img id="moviePoster" src="" alt="Постер" class="poster">
+        <button id="favBtn" class="fav-btn">🤍 В избранное</button>
+      </div>
+      <div class="movie-info">
+        <h2 id="movieTitle"></h2>
+        <div class="meta">
+          <p id="movieYear" class="year"></p>
+          <p id="movieRating" class="rating">⭐ N/A</p>
+        </div>
+        <p id="moviePlot" class="plot"></p>
+        <a id="trailerBtn" href="#" target="_blank" class="btn-primary hidden">▶ Смотреть трейлер</a>
+      </div>
+    </div>
+
+    <!-- Секция избранного -->
+    <div class="favorites-section">
+      <h3>Мой список "Посмотреть"</h3>
+      <div id="favoritesList" class="favorites-list">
+        <p class="empty-msg">Список пока пуст...</p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
