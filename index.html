@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🎬 Кино-Рулетка</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
   <div class="container">
@@ -12,6 +12,7 @@
     <p class="subtitle">Не знаешь, что посмотреть? Доверься случаю!</p>
     
     <div class="controls">
+      <!-- Добавили новые жанры -->
       <select id="genreSelect" class="genre-select">
         <option value="">Любой жанр</option>
         <option value="action">Боевик</option>
@@ -20,8 +21,25 @@
         <option value="sci-fi">Фантастика</option>
         <option value="drama">Драма</option>
         <option value="thriller">Триллер</option>
+        <option value="animation">Мультфильм</option>
+        <option value="documentary">Документальное</option>
+        <option value="family">Семейное</option>
+        <option value="romance">Мелодрама</option>
       </select>
       <button id="spinBtn" class="spin-btn">Крутить рулетку</button>
+    </div>
+
+    <!-- Скелетон загрузки -->
+    <div id="skeletonCard" class="movie-card skeleton hidden">
+      <div class="poster-container">
+        <div class="poster skeleton-box"></div>
+      </div>
+      <div class="movie-info">
+        <div class="skeleton-line skeleton-title"></div>
+        <div class="skeleton-line skeleton-meta"></div>
+        <div class="skeleton-line skeleton-plot"></div>
+        <div class="skeleton-line skeleton-plot"></div>
+      </div>
     </div>
 
     <!-- Основная карточка фильма -->
@@ -37,7 +55,10 @@
           <p id="movieRating" class="rating">⭐ N/A</p>
         </div>
         <p id="moviePlot" class="plot"></p>
-        <a id="trailerBtn" href="#" target="_blank" class="btn-primary hidden">▶ Смотреть трейлер</a>
+        <div class="action-buttons">
+          <a id="trailerBtn" href="#" class="btn-primary hidden">▶ Смотреть трейлер</a>
+          <button id="skipBtn" class="btn-secondary">⏭ Пропустить</button>
+        </div>
       </div>
     </div>
 
@@ -49,6 +70,15 @@
       </div>
     </div>
   </div>
-  <script src="script.js"></script>
+
+  <!-- Модальное окно для трейлера -->
+  <div id="trailerModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content trailer-modal">
+      <button id="closeTrailerBtn" class="close-modal-btn">✕</button>
+      <div id="trailerContainer"></div>
+    </div>
+  </div>
+
+  <script src="script.js?v=2"></script>
 </body>
 </html>
